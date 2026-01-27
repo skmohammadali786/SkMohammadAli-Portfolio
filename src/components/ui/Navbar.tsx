@@ -22,7 +22,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6"
     >
-      <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-white/5 bg-[#0F1115]/80 px-6 py-3 backdrop-blur-xl">
+      <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-white/5 bg-[#0F1115]/80 px-6 py-3 backdrop-blur-md transform-gpu">
         <div className="text-xl font-bold tracking-tighter text-white"></div>
         
         {/* Desktop Nav */}
@@ -51,11 +51,11 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="absolute top-24 left-6 right-6 flex flex-col items-center gap-6 rounded-3xl border border-white/5 bg-[#0F1115]/95 p-8 backdrop-blur-2xl md:hidden"
-          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="absolute top-24 left-6 right-6 flex flex-col items-center gap-6 rounded-3xl border border-white/5 bg-[#0F1115]/95 p-8 backdrop-blur-md md:hidden transform-gpu"
+            >
             {navLinks.map((link) => (
             <a
               key={link.name}

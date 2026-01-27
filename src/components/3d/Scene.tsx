@@ -8,10 +8,17 @@ import { Environment, ContactShadows } from "@react-three/drei";
 export default function Scene() {
   return (
     <div className="fixed inset-0 -z-10 bg-[#080808]">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 45 }}
-        gl={{ antialias: true, alpha: true }}
-      >
+        <Canvas
+          camera={{ position: [0, 0, 5], fov: 45 }}
+          gl={{ 
+            antialias: false, 
+            alpha: true, 
+            powerPreference: "high-performance",
+            stencil: false,
+            depth: true
+          }}
+          dpr={[1, 1.5]}
+        >
         <color attach="background" args={["#080808"]} />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />

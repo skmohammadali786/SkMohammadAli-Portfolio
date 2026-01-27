@@ -14,10 +14,10 @@ export function GlassPanel({ children, className, delay = 0 }: GlassPanelProps) 
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay, ease: "easeOut" }}
-      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px" }}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-white/5 bg-[#0F1115]/80 p-6 backdrop-blur-2xl transition-all hover:bg-[#0F1115]/90",
+        "relative overflow-hidden rounded-2xl border border-white/5 bg-[#0F1115]/60 p-5 backdrop-blur-md transition-all hover:bg-[#0F1115]/80 sm:p-6 transform-gpu will-change-transform",
         className
       )}
     >

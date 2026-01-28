@@ -278,7 +278,6 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 text-center text-xs text-[#B3B3B3]/60">
         <p>© 2025 {portfolioData.name}. All rights reserved.</p>
-        <p className="mt-2">Built with Next.js, Three.js, and Framer Motion.</p>
       </footer>
     </div>
   );

@@ -1,6 +1,6 @@
 export const portfolioData = {
   name: "SK MOHAMMAD ALI",
-  title: "Engineering Student",
+  title: "Electrical Engineering Student",
   summary: "Highly motivated Engineering student pursuing B.Tech in Electrical Engineering, eager to apply knowledge and develop practical skills.",
   about: "A highly motivated Engineering student pursuing a B.Tech in Electrical Engineering, expected to graduate in 2028. Eager to apply theoretical knowledge and develop practical skills within the field. Seeking opportunities to contribute to innovative projects and gain hands-on experience. Committed to continuous learning and professional growth within the engineering domain.",
   skills: [

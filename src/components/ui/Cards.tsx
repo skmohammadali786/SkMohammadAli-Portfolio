@@ -10,16 +10,27 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   link: string;
+  image?: string;
   delay?: number;
 }
 
-export function ProjectCard({ title, description, tags, link, delay = 0 }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, link, image, delay = 0 }: ProjectCardProps) {
   return (
     <GlassPanel delay={delay} className="group h-full transform-gpu will-change-transform">
       <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-[#0F1115]">
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent">
-          <div className="h-24 w-40 rounded border border-white/5 bg-white/5 backdrop-blur-sm" />
-        </div>
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent">
+            <div className="h-24 w-40 rounded border border-white/5 bg-white/5 backdrop-blur-sm" />
+          </div>
+        )}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 bg-black/60 backdrop-blur-[2px]">
           <a
             href={link}

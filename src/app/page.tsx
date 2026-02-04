@@ -55,13 +55,15 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="transform-gpu will-change-transform"
         >
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-white sm:text-7xl md:text-8xl lg:text-9xl">
-            {portfolioData.name}
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            {portfolioData.name}. <br className="hidden sm:block" />
+            <span className="text-2xl sm:text-5xl md:text-6xl text-[#B3B3B3] block mt-2">Engineering Student and Full Stack Developer</span>
           </h1>
           <p className="mb-8 text-lg text-[#B3B3B3] sm:text-2xl md:text-3xl">
-            {portfolioData.title}
+            {/* Subtitle removed from here as it is merged into H1 for better SEO structure as requested */}
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+          <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#projects"
               className="w-full flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-black transition-all hover:scale-105 active:scale-95 sm:w-auto"
@@ -75,6 +77,12 @@ export default function Home() {
               Contact Me
             </a>
           </div>
+
+          <GlassPanel className="mx-auto max-w-3xl text-left text-base leading-relaxed text-white/90 sm:text-lg">
+            <p>
+              Welcome to my digital portfolio. I am an enthusiastic Electrical Engineering student and a passionate Full Stack Developer based in India. I specialize in building scalable web applications and exploring the intersection of software and hardware through IoT projects. With a strong foundation in modern web technologies and engineering principles, I aim to create impactful digital experiences that solve real-world problems. Explore my projects and skills to see how I can contribute to your next big idea.
+            </p>
+          </GlassPanel>
         </motion.div>
       </section>
 
@@ -276,7 +284,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 text-center text-xs text-[#B3B3B3]/60">
+      <footer className="py-12 text-center text-xs text-[#B3B3B3]/60 flex flex-col gap-4">
+        <nav className="flex justify-center gap-6">
+          <a href="#" className="hover:text-white transition-colors">Home</a>
+          <a href="#about" className="hover:text-white transition-colors">About</a>
+          <a href="#skills" className="hover:text-white transition-colors">Skills</a>
+          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+        </nav>
         <p>© 2025 {portfolioData.name}. All rights reserved.</p>
       </footer>
     </div>

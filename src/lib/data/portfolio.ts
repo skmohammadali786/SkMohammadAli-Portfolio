@@ -2,7 +2,7 @@ export const portfolioData = {
   name: "SK MOHAMMAD ALI",
   title: "Electrical Engineering Student",
   summary: "Highly motivated Engineering student pursuing B.Tech in Electrical Engineering, eager to apply knowledge and develop practical skills.",
-  about: "A highly motivated Engineering student pursuing a B.Tech in Electrical Engineering, expected to graduate in 2028. Eager to apply theoretical knowledge and develop practical skills within the field. Seeking opportunities to contribute to innovative projects and gain hands-on experience. Committed to continuous learning and professional growth within the engineering domain.",
+  about: "I am a dedicated Electrical Engineering student at Aliah University with a passion for bridging the gap between hardware and software. My journey involves a deep dive into full-stack web development, where I build robust applications using modern technologies like Next.js, React, and Node.js. Simultaneously, I am exploring the world of IoT, integrating sensors and microcontrollers to create smart solutions. I thrive in challenging environments that require critical thinking and creative problem-solving. Whether it's designing a complex circuit or architecting a scalable web application, I bring a meticulous attention to detail and a drive for excellence. I am constantly learning and adapting to new technologies to stay ahead in this fast-paced digital era.",
   skills: [
     { name: "Communication", category: "Soft Skills", icon: "MessageCircle" },
     { name: "Public Speaking", category: "Soft Skills", icon: "Mic" },
@@ -18,8 +18,8 @@ export const portfolioData = {
   projects: [
     {
       title: "Voice Control Wheel Chair",
-      description: "An innovative engineering project focused on accessibility, allowing users to control a wheelchair through voice commands.",
-      image: "/projects/wheelchair.png",
+      description: "An advanced IoT-based engineering project designed to enhance accessibility for individuals with mobility impairments. This system utilizes voice recognition modules and microcontroller integration to allow users to navigate their wheelchair using simple voice commands, providing independence and ease of use.",
+      image: "/globe.svg",
       tags: ["Engineering", "Voice Control", "IoT"],
       link: "#"
     }
@@ -64,7 +64,7 @@ export const portfolioData = {
     contact: {
       email: "skmohammadaliofficail@gmail.com",
       github: "https://github.com/skmohammadali786",
-      linkedin: "https://www.linkedin.com/in/skmohammadali?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/skmohammadali",
       location: "Kolkata, India",
       instagram: "https://www.instagram.com/skmohammadali_?igsh=MTlpbzltcTU3eDNmag==",
       facebook: "https://www.facebook.com/share/17nMRusRwv/",

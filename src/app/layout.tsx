@@ -8,8 +8,16 @@ import Scene from "@/components/3d/Scene";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.skmohammadali.com'),
   title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-  description: "A premium 3D portfolio showcasing the work and skills of SK Mohammad Ali.",
+  description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

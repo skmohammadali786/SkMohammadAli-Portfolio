@@ -1,0 +1,33 @@
+# SK MOHAMMAD ALI - Portfolio
+
+## About
+A highly motivated Engineering student pursuing a B.Tech in Electrical Engineering at Aliah University, expected to graduate in 2028. Full-Stack Developer and IoT enthusiast. Eager to apply theoretical knowledge and develop practical skills within the field. Seeking opportunities to contribute to innovative projects and gain hands-on experience. Committed to continuous learning and professional growth within the engineering domain.
+
+## Contact
+- Email: skmohammadaliofficail@gmail.com
+- Location: Kolkata, India
+- LinkedIn: https://www.linkedin.com/in/skmohammadali
+- GitHub: https://github.com/skmohammadali786
+- Twitter: https://x.com/Skmohammadali_
+- Instagram: https://www.instagram.com/skmohammadali_
+- Facebook: https://www.facebook.com/share/17nMRusRwv/
+- Website: https://www.skmohammadali.com
+
+## Skills
+- Web: Full stack web development, SaaS
+- Engineering: IoT Development, Electrical Engineering
+- Management: Leadership, Project Management
+- Soft Skills: Communication, Public Speaking, Critical Thinking
+
+## Projects
+- Voice Control Wheel Chair: An innovative engineering project focused on accessibility, allowing users to control a wheelchair through voice commands. Tags: Engineering, Voice Control, IoT.
+
+## Education
+- B.Tech - Electrical Engineering, Aliah University (2024 - 2028)
+- Intermediate - Science, Al-Ameen Mission (2022 - 2024)
+- High School, Al-Ameen Mission (2018 - 2022)
+
+## Experience
+- Leadership at Various (May 2023 - Present): Taking on leadership roles in various academic and extracurricular projects.
+- Project Management at Various (Nov 2024 - Present): Overseeing project lifecycles and ensuring successful delivery of technical tasks.
+- Event Management at Various (May 2025 - Present): Organizing and coordinating engineering and social events.

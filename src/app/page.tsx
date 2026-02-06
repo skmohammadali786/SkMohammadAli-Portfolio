@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { portfolioData } from "@/lib/data/portfolio";
 import { GlassPanel, SectionHeader } from "@/components/ui/GlassComponents";
 import { ProjectCard, SkillBadge } from "@/components/ui/Cards";
+import EmailDisplay from "@/components/ui/EmailDisplay";
 import { 
   Layout, 
   Server, 
@@ -206,7 +207,7 @@ export default function Home() {
                 </div>
               <div>
                 <p className="text-xs text-[#B3B3B3]/60">Email</p>
-                <p className="text-base font-medium text-white sm:text-lg">{portfolioData.contact.email}</p>
+                <EmailDisplay email={portfolioData.contact.email} className="text-base font-medium text-white sm:text-lg" />
               </div>
             </div>
             <div className="flex items-center gap-4">

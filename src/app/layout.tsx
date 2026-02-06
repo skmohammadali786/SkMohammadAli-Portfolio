@@ -10,10 +10,10 @@ import { DynamicScene, DynamicVisualEditsMessenger } from "@/components/LazyComp
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.skmohammadali.com'),
   title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-  description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+  description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
   openGraph: {
     title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
     url: 'https://www.skmohammadali.com',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
     creator: '@Skmohammadali_',
   },
   icons: {
@@ -36,9 +36,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "SK MOHAMMAD ALI",
+    "jobTitle": "Electrical Engineering Student & Full-Stack Developer",
+    "url": "https://www.skmohammadali.com",
+    "sameAs": [
+      "https://github.com/skmohammadali786",
+      "https://www.linkedin.com/in/skmohammadali",
+      "https://www.instagram.com/skmohammadali_",
+      "https://www.facebook.com/share/17nMRusRwv/",
+      "https://x.com/Skmohammadali_"
+    ],
+    "email": "skmohammadaliofficail@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kolkata",
+      "addressCountry": "India"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Aliah University"
+    }
+  };
+
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="antialiased bg-black text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-EJCFWZWK8X" />
         <Script
           id="orchids-browser-logs"

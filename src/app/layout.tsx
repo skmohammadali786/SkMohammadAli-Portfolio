@@ -6,13 +6,28 @@ import Script from "next/script";
 import Navbar from "@/components/ui/Navbar";
 import Scene from "@/components/3d/Scene";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.skmohammadali.com'),
   title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
   description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.skmohammadali.com',
+  },
+  openGraph: {
+    title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
+    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+    url: 'https://www.skmohammadali.com',
+    siteName: 'SK MOHAMMAD ALI Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
+    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full-Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information.",
+    creator: '@Skmohammadali_',
   },
   icons: {
     icon: '/favicon.ico',
@@ -28,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="antialiased bg-black text-white">
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-EJCFWZWK8X" />
         <Script
           id="orchids-browser-logs"
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"

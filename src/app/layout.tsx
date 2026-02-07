@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     creator: '@Skmohammadali_',
   },
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.ico',
+    icon: process.env.NEXT_PUBLIC_CDN_URL ? `${process.env.NEXT_PUBLIC_CDN_URL}/favicon.png` : '/favicon.png',
+    apple: process.env.NEXT_PUBLIC_CDN_URL ? `${process.env.NEXT_PUBLIC_CDN_URL}/favicon.ico` : '/favicon.ico',
   },
 };
 

@@ -62,7 +62,7 @@ export const portfolioData = {
     }
   ],
     contact: {
-      email: "skmohammadaliofficail@gmail.com",
+      emails: ["connect@skmohammadali.in", "skmohammadaliofficail@gmail.com"],
       github: "https://github.com/skmohammadali786",
       linkedin: "https://www.linkedin.com/in/skmohammadali?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       location: "Kolkata, India",

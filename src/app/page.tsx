@@ -205,9 +205,11 @@ export default function Home() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white">
                   <Mail size={22} />
                 </div>
-              <div>
+              <div className="flex flex-col gap-1">
                 <p className="text-xs text-[#B3B3B3]/60">Email</p>
-                <EmailDisplay email={portfolioData.contact.email} className="text-base font-medium text-white sm:text-lg" />
+                {portfolioData.contact.emails.map((email) => (
+                  <EmailDisplay key={email} email={email} className="text-base font-medium text-white sm:text-lg block" />
+                ))}
               </div>
             </div>
             <div className="flex items-center gap-4">

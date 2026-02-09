@@ -29,6 +29,7 @@ import {
   Facebook,
   Twitter
 } from "lucide-react";
+import { IconBrandTelegram as Telegram } from "@tabler/icons-react";
 
 const iconMap: Record<string, any> = {
   Layout,
@@ -225,8 +226,9 @@ export default function Home() {
               {[
                 { icon: Github, href: portfolioData.contact.github },
                 { icon: Linkedin, href: portfolioData.contact.linkedin },
-                { icon: Instagram, href: portfolioData.contact.instagram },
                 { icon: Twitter, href: portfolioData.contact.twitter },
+                { icon: Telegram, href: portfolioData.contact.telegram },
+                { icon: Instagram, href: portfolioData.contact.instagram },
                 { icon: Facebook, href: portfolioData.contact.facebook }
               ].map((social, i) => (
                 <a 

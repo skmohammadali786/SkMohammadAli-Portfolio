@@ -68,6 +68,7 @@ export const portfolioData = {
       location: "Kolkata, India",
       instagram: "https://www.instagram.com/skmohammadali_?igsh=MTlpbzltcTU3eDNmag==",
       facebook: "https://www.facebook.com/share/17nMRusRwv/",
-      twitter: "https://x.com/Skmohammadali_"
+      twitter: "https://x.com/Skmohammadali_",
+      telegram: "https://t.me/skmohammadali"
     }
 };

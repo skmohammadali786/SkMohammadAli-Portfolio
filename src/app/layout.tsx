@@ -49,7 +49,7 @@ export default function RootLayout({
       "https://www.facebook.com/share/17nMRusRwv/",
       "https://x.com/Skmohammadali_"
     ],
-    "email": "skmohammadaliofficail@gmail.com",
+    "email": ["connect@skmohammadali.in", "skmohammadaliofficail@gmail.com"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kolkata",

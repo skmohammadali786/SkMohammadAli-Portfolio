@@ -243,22 +243,26 @@ export default function Home() {
           </GlassPanel>
           
           <GlassPanel>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" action="https://formspree.io/f/xvzbgbrr" method="POST">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-xs text-[#B3B3B3]">Name</label>
                   <input
                     type="text"
+                    name="name"
                     className="w-full rounded-lg border border-white/5 bg-white/5 px-4 py-3 text-sm text-white focus:border-white/20 focus:outline-none focus:ring-0"
                     placeholder="Your Name"
+                    required
                   />
                 </div>
                 <div>
                   <label className="mb-1 block text-xs text-[#B3B3B3]">Email</label>
                   <input
                     type="email"
+                    name="email"
                     className="w-full rounded-lg border border-white/5 bg-white/5 px-4 py-3 text-sm text-white focus:border-white/20 focus:outline-none focus:ring-0"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
               </div>
@@ -266,8 +270,10 @@ export default function Home() {
                 <label className="mb-1 block text-xs text-[#B3B3B3]">Message</label>
                 <textarea
                   rows={4}
+                  name="message"
                   className="w-full rounded-lg border border-white/5 bg-white/5 px-4 py-3 text-sm text-white focus:border-white/20 focus:outline-none focus:ring-0"
                   placeholder="Tell me about your project"
+                  required
                 />
               </div>
               <button className="w-full rounded-lg bg-white py-4 text-sm font-bold text-black transition-all hover:bg-zinc-200 active:scale-95">

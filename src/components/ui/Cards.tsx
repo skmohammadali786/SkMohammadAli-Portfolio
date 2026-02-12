@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GlassPanel } from "./GlassComponents";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 interface ProjectCardProps {

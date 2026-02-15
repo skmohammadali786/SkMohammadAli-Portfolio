@@ -30,7 +30,7 @@ export function ProjectCard({ title, description, tags, link, delay = 0 }: Proje
         </div>
       </div>
       <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
-      <p className="mb-4 text-sm text-[#B3B3B3] line-clamp-2">{description}</p>
+      <p className="mb-4 text-sm text-[#B3B3B3]">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span

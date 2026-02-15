@@ -10,7 +10,7 @@ import { DynamicScene, DynamicVisualEditsMessenger } from "@/components/LazyComp
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.skmohammadali.in'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.skmohammadali.in',
   },
   title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
   description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",

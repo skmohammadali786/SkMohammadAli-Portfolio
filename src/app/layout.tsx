@@ -8,13 +8,16 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { DynamicScene, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.skmohammadali.com'),
+  metadataBase: new URL('https://www.skmohammadali.in'),
+  alternates: {
+    canonical: '/',
+  },
   title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
   description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
   openGraph: {
     title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
     description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
-    url: 'https://www.skmohammadali.com',
+    url: 'https://www.skmohammadali.in',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
     type: 'website',
@@ -41,7 +44,7 @@ export default function RootLayout({
     "@type": "Person",
     "name": "SK MOHAMMAD ALI",
     "jobTitle": "Electrical Engineering Student & Full-Stack Developer",
-    "url": "https://www.skmohammadali.com",
+    "url": "https://www.skmohammadali.in",
     "sameAs": [
       "https://github.com/skmohammadali786",
       "https://www.linkedin.com/in/skmohammadali",

@@ -73,7 +73,6 @@
         "react-responsive-masonry": "^2.7.1",
         "react-syntax-highlighter": "^15.6.1",
         "react-wrap-balancer": "^1.1.1",
-        "recharts": "^3.0.2",
         "simplex-noise": "^4.0.3",
         "sonner": "^2.0.6",
         "stripe": "^19.2.0",

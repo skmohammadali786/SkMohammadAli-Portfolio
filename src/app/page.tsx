@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import { IconBrandTelegram as Telegram } from "@tabler/icons-react";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string; size?: number | string }>> = {
   Layout,
   Server,
   Cpu,
@@ -116,7 +116,7 @@ export default function Home() {
           subtitle="My professional and leadership journey." 
         />
         <div className="space-y-6 sm:space-y-8">
-          {(portfolioData as any).experience.map((exp: any, index: number) => (
+          {portfolioData.experience.map((exp, index) => (
             <motion.div
               key={exp.role}
               initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function Home() {
           subtitle="My academic background." 
         />
         <div className="space-y-6 sm:space-y-8">
-          {(portfolioData as any).education.map((edu: any, index: number) => (
+          {portfolioData.education.map((edu, index) => (
             <motion.div
               key={edu.degree}
               initial={{ opacity: 0, y: 20 }}

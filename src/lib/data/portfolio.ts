@@ -1,4 +1,54 @@
-export const portfolioData = {
+export interface Skill {
+  name: string;
+  category: string;
+  icon: string;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+}
+
+export interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+}
+
+export interface Contact {
+  emails: string[];
+  github: string;
+  linkedin: string;
+  location: string;
+  instagram: string;
+  facebook: string;
+  twitter: string;
+  telegram: string;
+}
+
+export interface PortfolioData {
+  name: string;
+  title: string;
+  summary: string;
+  about: string;
+  skills: Skill[];
+  projects: Project[];
+  experience: Experience[];
+  education: Education[];
+  contact: Contact;
+}
+
+export const portfolioData: PortfolioData = {
   name: "SK MOHAMMAD ALI",
   title: "Electrical Engineering Student",
   summary: "Highly motivated Engineering student pursuing B.Tech in Electrical Engineering, eager to apply knowledge and develop practical skills.",

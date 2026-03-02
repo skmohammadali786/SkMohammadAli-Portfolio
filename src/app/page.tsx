@@ -27,7 +27,8 @@ import {
   Calendar,
   Instagram,
   Facebook,
-  Twitter
+  Twitter,
+  Download
 } from "lucide-react";
 import { IconBrandTelegram as Telegram } from "@tabler/icons-react";
 
@@ -69,6 +70,13 @@ export default function Home() {
               className="w-full flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-black transition-all hover:scale-105 active:scale-95 sm:w-auto"
             >
               View Work <ArrowRight size={20} />
+            </a>
+            <a
+              href="/resume.pdf"
+              download
+              className="w-full flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-sm transition-all hover:scale-105 active:scale-95 sm:w-auto"
+            >
+              Download Resume <Download size={20} />
             </a>
             <a
               href="#contact"

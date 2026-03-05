@@ -296,7 +296,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 text-center text-xs text-[#B3B3B3]/60">
-        <p>© 2025 {portfolioData.name}. All rights reserved.</p>
+        <p>© 2026 {portfolioData.name}. All rights reserved.</p>
       </footer>
     </div>
   );

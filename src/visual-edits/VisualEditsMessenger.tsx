@@ -154,6 +154,26 @@ type Box = null | { top: number; left: number; width: number; height: number };
 
 const BOX_PADDING = 4; // Pixels to expand the box on each side
 
+// Clear only the inline styles we track (typography, spacing, and background)
+const STYLES_TO_CLEAR = [
+  "fontSize",
+  "color",
+  "fontWeight",
+  "fontStyle",
+  "textDecoration",
+  "textAlign",
+  "paddingLeft",
+  "paddingRight",
+  "paddingTop",
+  "paddingBottom",
+  "marginLeft",
+  "marginRight",
+  "marginTop",
+  "marginBottom",
+  "backgroundColor",
+  "backgroundImage",
+] as const;
+
 export default function HoverReceiver() {
   const [hoverBox, setHoverBox] = useState<Box>(null);
   const [hoverBoxes, setHoverBoxes] = useState<Box[]>([]);
@@ -1638,27 +1658,7 @@ export default function HoverReceiver() {
         ) as NodeListOf<HTMLElement>;
 
         allMatchingElements.forEach((element) => {
-          // Clear only the inline styles we track (typography, spacing, and background)
-          const stylesToClear = [
-            "fontSize",
-            "color",
-            "fontWeight",
-            "fontStyle",
-            "textDecoration",
-            "textAlign",
-            "paddingLeft",
-            "paddingRight",
-            "paddingTop",
-            "paddingBottom",
-            "marginLeft",
-            "marginRight",
-            "marginTop",
-            "marginBottom",
-            "backgroundColor",
-            "backgroundImage",
-          ];
-
-          stylesToClear.forEach((prop) => {
+          STYLES_TO_CLEAR.forEach((prop) => {
             (element.style as any)[prop] = "";
           });
         });

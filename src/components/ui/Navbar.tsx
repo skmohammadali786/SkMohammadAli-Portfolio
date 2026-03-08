@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { portfolioData } from "@/lib/data/portfolio";
 
@@ -23,7 +25,11 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6"
     >
       <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-white/5 bg-[#0F1115]/80 px-6 py-3 backdrop-blur-md transform-gpu">
-        <div className="text-xl font-bold tracking-tighter text-white"></div>
+        <div className="text-xl font-bold tracking-tighter text-white">
+          <Link href="/">
+            <Image src="/logo.webp" alt="Logo" width={40} height={40} className="rounded-full" />
+          </Link>
+        </div>
         
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">

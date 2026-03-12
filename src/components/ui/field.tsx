@@ -200,12 +200,13 @@ function FieldError({
       return null
     }
 
-    const uniqueErrors = [
-      ...errors.reduce((acc, error) => {
-        acc.set(error?.message, error)
-        return acc
-      }, new Map<string | undefined, { message?: string } | undefined>()).values(),
-    ]
+    const seen = new Set<string | undefined>()
+    const uniqueErrors = errors.filter((error) => {
+      const message = error?.message
+      if (seen.has(message)) return false
+      seen.add(message)
+      return true
+    })
 
     if (uniqueErrors?.length == 1) {
       return uniqueErrors[0]?.message

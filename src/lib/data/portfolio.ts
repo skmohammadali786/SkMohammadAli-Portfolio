@@ -52,7 +52,18 @@ export const portfolioData: PortfolioData = {
   name: "SK MOHAMMAD ALI",
   title: "Electrical Engineering Student",
   summary: "Highly motivated Engineering student pursuing B.Tech in Electrical Engineering, eager to apply knowledge and develop practical skills.",
-  about: "A highly motivated and dedicated Engineering student currently pursuing a B.Tech in Electrical Engineering at Aliah University, with an expected graduation in 2028. I possess a strong passion for bridging the gap between hardware and software, combining my core engineering knowledge with modern Full-Stack web development skills. My expertise spans across IoT development, SaaS application building, and creative design. I am eager to apply my theoretical knowledge to solve real-world problems and develop practical, scalable solutions. Currently seeking opportunities to contribute to innovative projects that challenge my technical abilities and allow me to gain hands-on experience in a professional environment. I am committed to continuous learning, leadership, and professional growth within the engineering and technology domains.",
+  about: `I am an Electrical Engineering student at Aliah University, graduating in 2028. I build systems that connect hardware and software to solve real problems.
+My work sits at the intersection of:
+IoT and embedded systems
+Full-stack web development
+SaaS product building
+I enjoy taking ideas from concept to working product. I focus on building things that are practical, scalable, and useful.
+I have worked on projects involving connected devices, web applications, and system integration. Each project helps me understand how technology works beyond theory.
+Right now, I am looking for opportunities to:
+Work on real-world engineering problems
+Contribute to meaningful projects
+Learn from experienced developers and engineers
+I am focused on consistent learning, hands-on building, and growing into a well-rounded engineer.`,
   skills: [
     { name: "Communication", category: "Soft Skills", icon: "MessageCircle" },
     { name: "Public Speaking", category: "Soft Skills", icon: "Mic" },

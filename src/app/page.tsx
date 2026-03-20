@@ -94,7 +94,7 @@ export default function Home() {
           title="About Me" 
           subtitle="Combining engineering precision with creative development." 
         />
-        <GlassPanel className="text-base leading-relaxed text-white sm:text-lg">
+        <GlassPanel className="text-base leading-relaxed text-white sm:text-lg whitespace-pre-wrap">
           {portfolioData.about}
         </GlassPanel>
       </section>

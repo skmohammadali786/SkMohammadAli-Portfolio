@@ -1,9 +1,17 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { MeshDistortMaterial, Float } from "@react-three/drei";
 import * as THREE from "three";
+
+const PARTICLES_COUNT = 1000;
+const PARTICLE_POSITIONS = new Float32Array(PARTICLES_COUNT * 3);
+for (let i = 0; i < PARTICLES_COUNT; i++) {
+  PARTICLE_POSITIONS[i * 3] = (Math.random() - 0.5) * 10;
+  PARTICLE_POSITIONS[i * 3 + 1] = (Math.random() - 0.5) * 10;
+  PARTICLE_POSITIONS[i * 3 + 2] = (Math.random() - 0.5) * 10;
+}
 
 export function HeroObject() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -34,17 +42,6 @@ export function HeroObject() {
 
 export function BackgroundParticles() {
   const particlesRef = useRef<THREE.Points>(null);
-  const count = 1000;
-  
-  const positions = useMemo(() => {
-    const pos = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 10;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 10;
-    }
-    return pos;
-  }, [count]);
 
   useFrame((state) => {
     if (!particlesRef.current) return;
@@ -56,8 +53,8 @@ export function BackgroundParticles() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={count}
-          array={positions}
+          count={PARTICLES_COUNT}
+          array={PARTICLE_POSITIONS}
           itemSize={3}
         />
       </bufferGeometry>

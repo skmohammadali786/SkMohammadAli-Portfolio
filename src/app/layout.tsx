@@ -43,15 +43,16 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "SK MOHAMMAD ALI",
-    "jobTitle": "Electrical Engineering Student & Full-Stack Developer",
+    "name": "SK Mohammad Ali",
+    "jobTitle": "Electrical Engineering Student",
     "url": "https://www.skmohammadali.in",
+    "image": "https://skmohammadali.in/logo.webp",
     "sameAs": [
-      "https://github.com/skmohammadali786",
-      "https://www.linkedin.com/in/skmohammadali",
       "https://www.instagram.com/skmohammadali_",
+      "https://www.linkedin.com/in/skmohammadali",
+      "https://twitter.com/Skmohammadali_",
       "https://www.facebook.com/share/17nMRusRwv/",
-      "https://x.com/Skmohammadali_"
+      "https://github.com/skmohammadali786"
     ],
     "email": ["connect@skmohammadali.in", "skmohammadaliofficail@gmail.com"],
     "address": {

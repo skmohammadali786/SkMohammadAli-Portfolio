@@ -6,6 +6,7 @@ import Navbar from "@/components/ui/Navbar";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { DynamicScene, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.skmohammadali.in'),
@@ -65,7 +66,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark">
       <body className="antialiased bg-black text-white">
         <script
           type="application/ld+json"
@@ -92,9 +93,11 @@ export default function RootLayout({
         <DynamicScene />
         <Navbar />
         <LoadingScreen />
-        <main className="relative z-10">
-          {children}
-        </main>
+        <SmoothScroll>
+          <main className="relative z-10">
+            {children}
+          </main>
+        </SmoothScroll>
         <DynamicVisualEditsMessenger />
       </body>
     </html>

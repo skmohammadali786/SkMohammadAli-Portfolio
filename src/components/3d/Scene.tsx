@@ -17,7 +17,7 @@ export default function Scene() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  if (isMobile) {
+  if (false && isMobile) {
     return null; // As requested by AGENTS.md / memory for Scene.tsx (performance optimization)
   }
 

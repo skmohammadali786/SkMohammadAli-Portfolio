@@ -8,7 +8,7 @@ const cspHeader = `
     font-src 'self' data: https:;
     object-src 'none';
     base-uri 'self';
-    form-action 'self';
+    form-action 'self' https://formspree.io;
     frame-ancestors 'none';
     connect-src 'self' https: wss:;
     upgrade-insecure-requests;

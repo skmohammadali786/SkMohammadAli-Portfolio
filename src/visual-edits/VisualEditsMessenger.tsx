@@ -576,6 +576,10 @@ export default function HoverReceiver() {
   // Listen for style and image updates from parent
   useEffect(() => {
     function handleMessage(e: MessageEvent) {
+      const isTrustedMessage =
+        e.origin === window.location.origin || e.source === window;
+      if (!isTrustedMessage) return;
+
       const sanitizeImageUrl = (value: unknown): string | null => {
         if (typeof value !== "string") return null;
         const trimmed = value.trim();

@@ -90,27 +90,27 @@ function PeopleIllustration() {
         </defs>
         <path d="M76 367 C171 258 246 440 353 287 C447 151 526 293 607 143" fill="none" stroke="#2c2e2a" strokeWidth="10" strokeLinecap="round" filter="url(#wobble)" />
         <path d="M76 367 C171 258 246 440 353 287 C447 151 526 293 607 143" fill="none" stroke="#8ed462" strokeWidth="5" strokeLinecap="round" />
-        <motion.g transform="translate(34 292)" animate={{ y: [0, -12, 0], rotate: [-1.5, 1.5, -1.5] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "120px 396px" }}>
+        <g transform="translate(34 292)">
           <ellipse cx="86" cy="104" rx="78" ry="34" fill="#f5e211" />
           <rect x="40" y="22" width="92" height="116" rx="45" fill="#8ed462" stroke="#2c2e2a" strokeWidth="6" />
           <circle cx="86" cy="-4" r="42" fill="#ff8b64" stroke="#2c2e2a" strokeWidth="6" />
           <path d="M66 -7 Q86 8 107 -7" fill="none" stroke="#2c2e2a" strokeWidth="5" strokeLinecap="round" />
           <circle cx="72" cy="-13" r="4" fill="#2c2e2a" /><circle cx="101" cy="-13" r="4" fill="#2c2e2a" />
-        </motion.g>
-        <motion.g transform="translate(252 190)" animate={{ y: [0, -16, 0], rotate: [1.5, -1.5, 1.5] }} transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.25 }} style={{ transformOrigin: "340px 380px" }}>
+        </g>
+        <g transform="translate(252 190)">
           <ellipse cx="88" cy="190" rx="94" ry="38" fill="#75b7ff" />
           <path d="M22 84 C42 18 132 10 156 84 L141 185 H37 Z" fill="#ffffff" stroke="#2c2e2a" strokeWidth="6" />
           <circle cx="90" cy="36" r="45" fill="#ffd19c" stroke="#2c2e2a" strokeWidth="6" />
           <path d="M60 22 C78 -20 129 5 133 40" fill="none" stroke="#2c2e2a" strokeWidth="13" strokeLinecap="round" />
           <path d="M69 43 Q91 58 115 43" fill="none" stroke="#2c2e2a" strokeWidth="5" strokeLinecap="round" />
-        </motion.g>
-        <motion.g transform="translate(492 82)" animate={{ y: [0, -10, 0], rotate: [-1, 2, -1] }} transition={{ duration: 4.6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} style={{ transformOrigin: "556px 324px" }}>
+        </g>
+        <g transform="translate(492 82)">
           <ellipse cx="62" cy="242" rx="82" ry="34" fill="#8ed462" opacity=".9" />
           <rect x="18" y="80" width="92" height="158" rx="46" fill="#f5e211" stroke="#2c2e2a" strokeWidth="6" />
           <circle cx="64" cy="43" r="42" fill="#b88cff" stroke="#2c2e2a" strokeWidth="6" />
           <path d="M42 42 Q64 58 87 42" fill="none" stroke="#2c2e2a" strokeWidth="5" strokeLinecap="round" />
           <circle cx="50" cy="34" r="4" fill="#2c2e2a" /><circle cx="78" cy="34" r="4" fill="#2c2e2a" />
-        </motion.g>
+        </g>
         {[[78,367],[353,287],[607,143]].map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="15" fill="#ffffff" stroke="#2c2e2a" strokeWidth="6" />)}
       </svg>
       <div className="absolute -bottom-5 left-3 rounded-full border-2 border-ink bg-white px-5 py-3 text-sm font-black text-ink shadow-[5px_5px_0_#2c2e2a] sm:left-16">Design • Code • Systems</div>

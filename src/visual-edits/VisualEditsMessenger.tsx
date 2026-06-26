@@ -576,6 +576,37 @@ export default function HoverReceiver() {
   // Listen for style and image updates from parent
   useEffect(() => {
     function handleMessage(e: MessageEvent) {
+      const sanitizeImageUrl = (value: unknown): string | null => {
+        if (typeof value !== "string") return null;
+        const trimmed = value.trim();
+        if (!trimmed) return null;
+
+        // Allow relative URLs
+        if (
+          trimmed.startsWith("/") ||
+          trimmed.startsWith("./") ||
+          trimmed.startsWith("../")
+        ) {
+          return trimmed;
+        }
+
+        // Allow only safe absolute protocols and image data URLs
+        try {
+          const parsed = new URL(trimmed, window.location.href);
+          const protocol = parsed.protocol.toLowerCase();
+          if (protocol === "http:" || protocol === "https:") {
+            return parsed.toString();
+          }
+          if (protocol === "data:" && /^data:image\//i.test(trimmed)) {
+            return trimmed;
+          }
+        } catch {
+          return null;
+        }
+
+        return null;
+      };
+
       if (e.data?.type === "ORCHIDS_STYLE_UPDATE") {
         const { elementId, styles } = e.data;
 
@@ -699,10 +730,13 @@ export default function HoverReceiver() {
             imgEl.removeAttribute("srcset");
             imgEl.srcset = "";
 
-            imgEl.src = src;
+            const safeSrc = sanitizeImageUrl(src);
+            if (!safeSrc) return;
+
+            imgEl.src = safeSrc;
 
             // Update baseline src so flush doesn't treat this as pending change
-            originalSrcRef.current = normalizeImageSrc(src);
+            originalSrcRef.current = normalizeImageSrc(safeSrc);
             focusedImageElementRef.current = imgEl;
 
             imgEl.onload = () => updateFocusBox();

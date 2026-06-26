@@ -33,8 +33,8 @@ export function ProjectCard({ title, description, tags, link, delay = 0 }: Proje
         </svg>
         <a href={link} className="absolute bottom-5 right-5 rounded-full border-2 border-ink bg-white p-4 text-ink shadow-[4px_4px_0_#2c2e2a] transition group-hover:-translate-y-1" aria-label={`View ${title}`}><ExternalLink size={20} /></a>
       </div>
-      <h3 className="mb-4 text-4xl font-black leading-none tracking-[-0.08em]">{title}</h3>
-      <p className="mb-6 text-lg font-semibold leading-8 text-ink/76">{description}</p>
+      <h3 className="mb-4 text-3xl font-black sm:text-4xl leading-none tracking-[-0.08em]">{title}</h3>
+      <p className="mb-6 text-base font-semibold leading-7 sm:text-lg sm:leading-8 text-ink/76">{description}</p>
       <div className="flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-full border-2 border-ink bg-cream px-3 py-1 text-xs font-black uppercase tracking-[0.08em]">{tag}</span>)}</div>
     </GlassPanel>
   );

@@ -3,7 +3,6 @@ import "./globals.css";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import Navbar from "@/components/ui/Navbar";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { DynamicVisualEditsMessenger } from "@/components/LazyComponents";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -92,7 +91,6 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         <Navbar />
-        <LoadingScreen />
         <SmoothScroll>
           <main className="relative z-10">
             {children}

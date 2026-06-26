@@ -46,7 +46,7 @@ export function SectionHeader({ title, subtitle, eyebrow }: { title: string; sub
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="text-[clamp(3.8rem,9vw,9.5rem)] font-black leading-[0.82] tracking-[-0.1em] text-ink"
+        className="text-[clamp(2.7rem,12vw,9.5rem)] font-black leading-[0.82] tracking-[-0.1em] text-ink"
       >
         {title}
       </motion.h2>
@@ -56,7 +56,7 @@ export function SectionHeader({ title, subtitle, eyebrow }: { title: string; sub
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
-          className="mt-7 max-w-4xl text-xl font-semibold leading-9 text-ink/75 sm:text-2xl"
+          className="mt-5 max-w-4xl text-base font-semibold leading-7 text-ink/75 sm:mt-7 sm:text-2xl sm:leading-9"
         >
           {subtitle}
         </motion.p>

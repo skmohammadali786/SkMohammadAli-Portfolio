@@ -12,44 +12,55 @@ interface GlassPanelProps {
 export function GlassPanel({ children, className, delay = 0 }: GlassPanelProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.55, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-70px" }}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-white/5 bg-[#0F1115]/60 p-5 backdrop-blur-md transition-all hover:bg-[#0F1115]/80 sm:p-6 transform-gpu will-change-transform",
+        "relative overflow-hidden rounded-[3rem] border-2 border-ink bg-white p-6 text-ink shadow-[7px_7px_0_#2c2e2a] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_0_#2c2e2a] sm:p-8",
         className
       )}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-      {children}
+      <div className="pointer-events-none absolute right-6 top-6 h-10 w-10 rounded-full border-2 border-ink/15" />
+      <div className="relative z-10">{children}</div>
     </motion.div>
   );
 }
 
-export function SectionHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+export function SectionHeader({ title, subtitle, eyebrow }: { title: string; subtitle?: string; eyebrow?: string }) {
   return (
-    <div className="mb-12 space-y-2">
+    <div className="mb-12 max-w-5xl">
+      {eyebrow && (
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          viewport={{ once: true }}
+          className="mb-4 w-fit rounded-full border-2 border-ink bg-white px-4 py-2 text-sm font-black uppercase tracking-[0.12em] shadow-[3px_3px_0_#2c2e2a]"
+        >
+          {eyebrow}
+        </motion.p>
+      )}
       <motion.h2
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold tracking-tighter text-white sm:text-5xl"
+        className="text-[clamp(3.8rem,9vw,9.5rem)] font-black leading-[0.82] tracking-[-0.1em] text-ink"
       >
         {title}
       </motion.h2>
-        {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-lg text-[#B3B3B3]"
-          >
-            {subtitle}
-          </motion.p>
-        )}
+      {subtitle && (
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          viewport={{ once: true }}
+          className="mt-7 max-w-4xl text-xl font-semibold leading-9 text-ink/75 sm:text-2xl"
+        >
+          {subtitle}
+        </motion.p>
+      )}
     </div>
   );
 }

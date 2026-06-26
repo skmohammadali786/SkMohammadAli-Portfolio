@@ -3,9 +3,8 @@ import "./globals.css";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import Navbar from "@/components/ui/Navbar";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { DynamicScene, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
+import { DynamicVisualEditsMessenger } from "@/components/LazyComponents";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
@@ -68,7 +67,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <body className="antialiased bg-black text-white">
+      <body className="antialiased bg-cream text-ink">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -91,9 +90,7 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
-        <DynamicScene />
         <Navbar />
-        <LoadingScreen />
         <SmoothScroll>
           <main className="relative z-10">
             {children}

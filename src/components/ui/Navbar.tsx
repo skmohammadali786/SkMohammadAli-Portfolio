@@ -1,10 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
-import { portfolioData } from "@/lib/data/portfolio";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,11 +53,6 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-        </div>
-
-        <div className="hidden items-center gap-4 md:flex">
-          <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-[#5ba634]"><Github size={20} /></a>
-          <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-[#5ba634]"><Linkedin size={20} /></a>
         </div>
 
         {/* Mobile Toggle */}

@@ -24,8 +24,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6"
     >
-      <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-white/10 bg-[#071014]/75 px-6 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-2xl transform-gpu">
-        <div className="text-xl font-bold tracking-tighter text-white">
+      <div className="flex w-full max-w-5xl items-center justify-between rounded-full border-2 border-ink bg-white px-6 py-3 text-ink shadow-[5px_5px_0_#2c2e2a] transform-gpu">
+        <div className="text-xl font-bold tracking-tighter text-ink">
           <Link href="/">
             <Image src="/logo.webp" alt="Logo" width={40} height={40} className="rounded-full" />
           </Link>
@@ -37,7 +37,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-100"
+              className="text-sm font-medium text-ink transition-colors hover:text-[#5ba634]"
             >
               {link.name}
             </a>
@@ -45,12 +45,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
-          <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-cyan-100"><Github size={20} /></a>
-          <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-cyan-100"><Linkedin size={20} /></a>
+          <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-[#5ba634]"><Github size={20} /></a>
+          <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-[#5ba634]"><Linkedin size={20} /></a>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-ink" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -60,14 +60,14 @@ export default function Navbar() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="absolute top-24 left-6 right-6 flex flex-col items-center gap-6 rounded-3xl border border-white/10 bg-[#071014]/95 p-8 backdrop-blur-md md:hidden transform-gpu"
+              className="absolute top-24 left-6 right-6 flex flex-col items-center gap-6 rounded-[2rem] border-2 border-ink bg-white p-8 shadow-[5px_5px_0_#2c2e2a] md:hidden transform-gpu"
             >
             {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-lg font-medium text-white"
+              className="text-lg font-medium text-ink"
             >
               {link.name}
             </a>

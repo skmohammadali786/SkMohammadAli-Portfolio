@@ -8,61 +8,69 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-cream: #f5f1e4;
+  --color-ink: #2c2e2a;
+  --color-fresh: #8ed462;
+  --color-sun: #f5e211;
 }
 
 :root {
-  --background: #121212;
-  --foreground: #ffffff;
+  --background: #f5f1e4;
+  --foreground: #2c2e2a;
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #ffffff;
+  --background: #f5f1e4;
+  --foreground: #2c2e2a;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @layer base {
   * {
-    @apply border-white/10 outline-none;
+    @apply border-ink outline-none;
   }
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply overflow-x-hidden bg-[#121212] text-white antialiased selection:bg-cyan-200/20;
+    @apply overflow-x-hidden bg-cream text-ink antialiased selection:bg-fresh/50;
     background:
-      radial-gradient(circle at 18% 12%, rgba(0, 242, 255, 0.16), transparent 28rem),
-      radial-gradient(circle at 82% 2%, rgba(139, 92, 246, 0.12), transparent 30rem),
-      linear-gradient(180deg, #121212 0%, #071014 46%, #121212 100%);
+      radial-gradient(circle at 8% 18%, rgba(142, 212, 98, 0.32), transparent 22rem),
+      radial-gradient(circle at 88% 8%, rgba(245, 226, 17, 0.28), transparent 20rem),
+      #f5f1e4;
   }
 
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    pointer-events: none;
     z-index: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 78%);
+    pointer-events: none;
+    opacity: .28;
+    background-image: radial-gradient(#2c2e2a 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.45), transparent 70%);
   }
 }
 
 @layer components {
   .glass-card {
-    @apply border border-white/10 bg-[#0c1116]/75 backdrop-blur-2xl;
+    @apply border-2 border-ink bg-white;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#071014];
+  @apply bg-cream;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-cyan-100/20 transition-colors hover:bg-cyan-100/40;
+  @apply rounded-full bg-fresh hover:bg-sun;
 }

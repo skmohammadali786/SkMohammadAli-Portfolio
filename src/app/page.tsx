@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { ComponentType } from "react";
 import { portfolioData } from "@/lib/data/portfolio";
 import { GlassPanel, SectionHeader } from "@/components/ui/GlassComponents";
 import { ProjectCard, SkillBadge } from "@/components/ui/Cards";
@@ -33,7 +31,7 @@ import {
 } from "lucide-react";
 import { IconBrandTelegram as Telegram } from "@tabler/icons-react";
 
-const iconMap: Record<string, React.ComponentType<{ className?: string; size?: number | string }>> = {
+const iconMap: Record<string, ComponentType<{ className?: string; size?: number | string }>> = {
   Layout,
   Server,
   Cpu,
@@ -133,20 +131,20 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden text-ink">
       <section className="mx-auto grid min-h-screen max-w-[1500px] items-center gap-12 px-4 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:grid-cols-[1.05fr_.95fr]">
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <div className="animate-hero-enter">
           <p className="mb-5 w-fit rounded-full border-2 border-ink bg-white px-5 py-2 text-sm font-black uppercase tracking-[0.12em] shadow-[4px_4px_0_#2c2e2a]">{portfolioData.title}</p>
           <h1 className="max-w-5xl text-[clamp(3.15rem,15vw,12.5rem)] sm:text-[clamp(5.5rem,13vw,13.5rem)] font-black leading-[0.84] tracking-[-0.09em] sm:leading-[0.78] sm:tracking-[-0.1em] text-ink">
-            {portfolioData.name}
+            SK Mohammad Ali Portfolio
           </h1>
           <p className="mt-6 max-w-3xl text-base font-semibold leading-7 text-ink/80 sm:mt-8 sm:text-2xl sm:leading-9">{portfolioData.about.split("\n")[0]}</p>
           <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap sm:mt-10 sm:gap-4">
             <a href="#projects" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-fresh px-5 py-3 text-sm font-black sm:px-8 sm:py-4 sm:text-lg text-ink shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:shadow-[8px_8px_0_#2c2e2a]">View Work <ArrowRight size={18} /></a>
             <a href="/resume.pdf" download className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-white px-5 py-3 text-sm font-black sm:px-8 sm:py-4 sm:text-lg text-ink shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:shadow-[8px_8px_0_#2c2e2a]"><Download size={18} /> Download Resume</a>
           </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, rotate: -2, scale: 0.96 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={{ duration: 0.9, delay: 0.1 }}>
+        </div>
+        <div className="animate-hero-enter [animation-delay:120ms]">
           <PeopleIllustration />
-        </motion.div>
+        </div>
       </section>
 
       <MarqueeStrip />

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { ComponentType } from "react";
 import { GlassPanel } from "./GlassComponents";
 import { ExternalLink } from "lucide-react";
 
@@ -40,14 +38,14 @@ export function ProjectCard({ title, description, tags, link, delay = 0 }: Proje
   );
 }
 
-export function SkillBadge({ name, icon: Icon, delay = 0 }: { name: string; icon: React.ComponentType<{ className?: string; size?: number | string }>; delay?: number }) {
+export function SkillBadge({ name, icon: Icon, delay = 0 }: { name: string; icon: ComponentType<{ className?: string; size?: number | string }>; delay?: number }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay, ease: "easeOut" }} viewport={{ once: true, margin: "-50px" }} className="group rounded-[2.25rem] border-2 border-ink bg-white p-5 text-center shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:bg-fresh">
+    <div className="group rounded-[2.25rem] border-2 border-ink bg-white p-5 text-center shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:bg-fresh" style={{ animationDelay: `${delay}s` }}>
       <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border-2 border-ink bg-cream">
         <svg viewBox="0 0 80 80" className="absolute inset-0 h-full w-full" aria-hidden="true"><path d="M13 44 C25 17 45 63 67 25" fill="none" stroke="#8ed462" strokeWidth="6" strokeLinecap="round"/><circle cx="40" cy="40" r="30" fill="none" stroke="#2c2e2a" strokeOpacity=".2" strokeWidth="2"/></svg>
         <Icon className="relative z-10 text-ink" size={32} />
       </div>
       <span className="text-sm font-black uppercase tracking-[-0.02em]">{name}</span>
-    </motion.div>
+    </div>
   );
 }

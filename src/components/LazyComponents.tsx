@@ -4,3 +4,5 @@ import dynamic from "next/dynamic";
 
 export const DynamicScene = dynamic(() => import("@/components/3d/Scene"), { ssr: false });
 export const DynamicVisualEditsMessenger = dynamic(() => import("@/visual-edits/VisualEditsMessenger"), { ssr: false });
+
+export const DynamicErrorReporter = dynamic(() => import("@/components/ErrorReporter"), { ssr: false });

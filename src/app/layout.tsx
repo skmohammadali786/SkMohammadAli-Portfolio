@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import Navbar from "@/components/ui/Navbar";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { DynamicVisualEditsMessenger } from "@/components/LazyComponents";
+import { DynamicErrorReporter, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
@@ -12,11 +11,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.skmohammadali.in',
   },
-  title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-  description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
+  title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
+  description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
+  keywords: [
+    "SK Mohammad Ali",
+    "SK Mohammad Ali portfolio",
+    "Electrical Engineering student",
+    "Full-stack developer",
+    "IoT development",
+    "SaaS builder",
+    "Kolkata developer",
+    "Aliah University",
+    "engineering projects",
+  ],
   openGraph: {
-    title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
+    title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
+    description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
     url: 'https://www.skmohammadali.in',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
@@ -24,13 +34,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SK MOHAMMAD ALI | Engineering Student & Full-Stack Developer",
-    description: "Explore the professional portfolio of SK Mohammad Ali, an Electrical Engineering student and Full- Stack Developer. View innovative projects in IoT and web development, technical skills, and contact information. ",
+    title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
+    description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
     creator: '@Skmohammadali_',
   },
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/logo.webp', type: 'image/webp' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/logo.webp',
   },
 };
 
@@ -79,7 +92,7 @@ export default function RootLayout({
           strategy="lazyOnload"
           data-orchids-project-id="6bf21f54-77be-440d-8b6d-8dc995cee286"
         />
-        <ErrorReporter />
+        <DynamicErrorReporter />
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
           strategy="lazyOnload"

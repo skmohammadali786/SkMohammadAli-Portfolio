@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
 import Navbar from "@/components/ui/Navbar";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { DynamicErrorReporter, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
@@ -11,8 +10,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.skmohammadali.in',
   },
-  title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
-  description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
+  title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
+  description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
   keywords: [
     "SK Mohammad Ali",
     "SK Mohammad Ali portfolio",
@@ -25,8 +24,8 @@ export const metadata: Metadata = {
     "engineering projects",
   ],
   openGraph: {
-    title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
-    description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
+    title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
+    description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
     url: 'https://www.skmohammadali.in',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
@@ -34,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SK Mohammad Ali Portfolio | Electrical Engineering Student & Full-Stack Developer",
-    description: "SK Mohammad Ali portfolio: Electrical Engineering student, full-stack developer, IoT builder, and SaaS maker in Kolkata. Explore projects, skills, resume, and contact details.",
+    title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
+    description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
     creator: '@Skmohammadali_',
   },
   icons: {
@@ -56,7 +55,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "SK Mohammad Ali",
-    "jobTitle": "Electrical Engineering Student",
+    "jobTitle": "Full-Stack Developer and Electrical Engineering Student",
     "url": "https://www.skmohammadali.in",
     "image": "https://skmohammadali.in/logo.webp",
     "sameAs": [
@@ -86,30 +85,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-EJCFWZWK8X" />
-        <Script
-          id="orchids-browser-logs"
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
-          strategy="lazyOnload"
-          data-orchids-project-id="6bf21f54-77be-440d-8b6d-8dc995cee286"
-        />
-        <DynamicErrorReporter />
-        <Script
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
-          strategy="lazyOnload"
-          data-target-origin="*"
-          data-message-type="ROUTE_CHANGE"
-          data-include-search-params="true"
-          data-only-in-iframe="true"
-          data-debug="true"
-          data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
-        />
+        {process.env.NODE_ENV === "development" && <DynamicErrorReporter />}
         <Navbar />
         <SmoothScroll>
           <main className="relative z-10">
             {children}
           </main>
         </SmoothScroll>
-        <DynamicVisualEditsMessenger />
+        {process.env.NODE_ENV === "development" && <DynamicVisualEditsMessenger />}
       </body>
     </html>
   );

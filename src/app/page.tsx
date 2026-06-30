@@ -136,6 +136,7 @@ export default function Home() {
           <h1 className="max-w-5xl text-[clamp(3.15rem,15vw,12.5rem)] sm:text-[clamp(5.5rem,13vw,13.5rem)] font-black leading-[0.84] tracking-[-0.09em] sm:leading-[0.78] sm:tracking-[-0.1em] text-ink">
             SK Mohammad Ali Portfolio
           </h1>
+          <h2 className="mt-5 max-w-4xl text-[clamp(1.35rem,4vw,3.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-ink">Full-Stack Developer, Electrical Engineering Student, IoT Builder & SaaS Maker in Kolkata</h2>
           <p className="mt-6 max-w-3xl text-base font-semibold leading-7 text-ink/80 sm:mt-8 sm:text-2xl sm:leading-9">{portfolioData.about.split("\n")[0]}</p>
           <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap sm:mt-10 sm:gap-4">
             <a href="#projects" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-fresh px-5 py-3 text-sm font-black sm:px-8 sm:py-4 sm:text-lg text-ink shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:shadow-[8px_8px_0_#2c2e2a]">View Work <ArrowRight size={18} /></a>

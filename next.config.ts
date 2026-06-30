@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https:;
     font-src 'self' data: https:;
@@ -10,7 +10,7 @@ const cspHeader = `
     base-uri 'self';
     form-action 'self' https://formspree.io;
     frame-ancestors 'none';
-    connect-src 'self' https: wss:;
+    connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https: wss:;
     upgrade-insecure-requests;
 `;
 

@@ -31,3 +31,9 @@ A highly motivated Engineering student pursuing a B.Tech in Electrical Engineeri
 - Leadership at Various (May 2023 - Present): Taking on leadership roles in various academic and extracurricular projects.
 - Project Management at Various (Nov 2024 - Present): Overseeing project lifecycles and ensuring successful delivery of technical tasks.
 - Event Management at Various (May 2025 - Present): Organizing and coordinating engineering and social events.
+
+## Citation and Backlink Resources
+- Official backlink resource page: https://www.skmohammadali.in/links
+- Preferred canonical portfolio URL: https://www.skmohammadali.in
+- Suggested citation: SK Mohammad Ali is an Electrical Engineering student, full-stack developer, and IoT builder in Kolkata, India.
+- Relevant linking contexts: engineering student profiles, IoT project roundups, assistive technology showcases, developer portfolios, campus event pages, and Kolkata technology directories.

@@ -15,9 +15,6 @@ const cspHeader = `
 `;
 
 const nextConfig: NextConfig = {
-  experimental: {
-    inlineCss: true,
-  },
   images: {
     remotePatterns: [
       {

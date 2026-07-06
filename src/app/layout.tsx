@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.skmohammadali.in',
   },
-  title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
-  description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
+  title: "SK Mohammad Ali | Full-Stack Developer",
+  description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
   keywords: [
     "SK Mohammad Ali",
     "SK Mohammad Ali portfolio",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     "engineering projects",
   ],
   openGraph: {
-    title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
-    description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
+    title: "SK Mohammad Ali | Full-Stack Developer",
+    description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
     url: 'https://www.skmohammadali.in',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SK Mohammad Ali Portfolio | Full-Stack Developer, Electrical Engineering Student & IoT Builder",
-    description: "SK Mohammad Ali portfolio for a Kolkata full-stack developer, Electrical Engineering student, IoT builder, and SaaS maker. Explore web development projects, skills, resume, and contact details.",
+    title: "SK Mohammad Ali | Full-Stack Developer",
+    description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
     creator: '@Skmohammadali_',
   },
   icons: {
@@ -65,7 +65,6 @@ export default function RootLayout({
       "https://www.facebook.com/share/17nMRusRwv/",
       "https://github.com/skmohammadali786"
     ],
-    "email": ["connect@skmohammadali.in", "skmohammadaliofficail@gmail.com"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kolkata",
@@ -84,6 +83,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-EJCFWZWK8X" />
         {process.env.NODE_ENV === "development" && <DynamicErrorReporter />}
         <Navbar />

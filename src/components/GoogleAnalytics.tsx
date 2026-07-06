@@ -32,25 +32,40 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
       return
     }
 
-    const idleHandle = loadWhenIdle(() => {
-      window.dataLayer = window.dataLayer || []
-      window.gtag = (...args: unknown[]) => {
-        window.dataLayer?.push(args)
-      }
+    let idleHandle: number | null = null
 
-      window.gtag('js', new Date())
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        anonymize_ip: true,
-        transport_type: 'beacon',
+    const initializeAnalytics = () => {
+      idleHandle = loadWhenIdle(() => {
+        window.dataLayer = window.dataLayer || []
+        window.gtag = (...args: unknown[]) => {
+          window.dataLayer?.push(args)
+        }
+
+        window.gtag('js', new Date())
+        window.gtag('config', GA_MEASUREMENT_ID, {
+          anonymize_ip: true,
+          transport_type: 'beacon',
+        })
+
+        const script = document.createElement('script')
+        script.async = true
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+        document.head.appendChild(script)
       })
+    }
 
-      const script = document.createElement('script')
-      script.async = true
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-      document.head.appendChild(script)
-    })
+    if (document.readyState === 'complete') {
+      initializeAnalytics()
+    } else {
+      window.addEventListener('load', initializeAnalytics, { once: true })
+    }
 
-    return () => cancelIdleLoad(idleHandle)
+    return () => {
+      window.removeEventListener('load', initializeAnalytics)
+      if (idleHandle !== null) {
+        cancelIdleLoad(idleHandle)
+      }
+    }
   }, [GA_MEASUREMENT_ID])
 
   return null

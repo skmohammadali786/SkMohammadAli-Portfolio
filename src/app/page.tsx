@@ -134,9 +134,9 @@ export default function Home() {
         <div className="animate-hero-enter">
           <p className="mb-5 w-fit rounded-full border-2 border-ink bg-white px-5 py-2 text-sm font-black uppercase tracking-[0.12em] shadow-[4px_4px_0_#2c2e2a]">{portfolioData.title}</p>
           <h1 className="max-w-5xl text-[clamp(3.15rem,15vw,12.5rem)] sm:text-[clamp(5.5rem,13vw,13.5rem)] font-black leading-[0.84] tracking-[-0.09em] sm:leading-[0.78] sm:tracking-[-0.1em] text-ink">
-            SK Mohammad Ali Portfolio
+            SK Mohammad Ali Engineering Projects Portfolio
           </h1>
-          <h2 className="mt-5 max-w-4xl text-[clamp(1.35rem,4vw,3.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-ink">Full-Stack Developer, Electrical Engineering Student, IoT Builder & SaaS Maker in Kolkata</h2>
+          <h2 className="mt-5 max-w-4xl text-[clamp(1.35rem,4vw,3.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-ink">Full-Stack Developer, Electrical Engineering Student, IoT Project Builder & Practical Systems Maker in Kolkata</h2>
           <p className="mt-6 max-w-3xl text-base font-semibold leading-7 text-ink/80 sm:mt-8 sm:text-2xl sm:leading-9">{portfolioData.about.split("\n")[0]}</p>
           <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap sm:mt-10 sm:gap-4">
             <a href="#projects" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-fresh px-5 py-3 text-sm font-black sm:px-8 sm:py-4 sm:text-lg text-ink shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:shadow-[8px_8px_0_#2c2e2a]">View Work <ArrowRight size={18} /></a>
@@ -154,7 +154,7 @@ export default function Home() {
         {promiseCards.map((card, index) => <GlassPanel key={card.title} delay={index * 0.05} className={index === 0 ? "bg-fresh" : index === 1 ? "bg-white" : index === 2 ? "bg-[#f5e211]" : "bg-[#ff8b64]"}><a href={card.href} className="flex h-full min-h-80 flex-col justify-between"><div><p className="text-6xl font-black tracking-[-0.08em]">0{index + 1}</p><h3 className="mt-8 text-4xl font-black tracking-[-0.08em]">{card.title}</h3><p className="mt-5 text-lg font-semibold leading-8 text-ink/78">{card.body}</p></div><span className="mt-8 inline-flex items-center gap-2 text-lg font-black">{card.label} <ArrowRight size={20} /></span></a></GlassPanel>)}
       </section>
 
-      <section id="about" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="About" title="A portfolio with one clear human thread." /><GlassPanel className="bg-white text-xl font-semibold leading-10 sm:text-2xl whitespace-pre-wrap">{portfolioData.about}</GlassPanel></section>
+      <section id="about" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="About" title="Engineering work with one clear human thread." /><GlassPanel className="bg-white text-xl font-semibold leading-10 sm:text-2xl whitespace-pre-wrap">{portfolioData.about}</GlassPanel></section>
 
       <section id="skills" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Capability Map" title="Skills, drawn like a living network." /><div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">{portfolioData.skills.map((skill, index) => <SkillBadge key={skill.name} name={skill.name} icon={iconMap[skill.icon]} delay={index * 0.035} />)}</div></section>
 
@@ -162,7 +162,7 @@ export default function Home() {
 
       <section id="education" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Foundation" title="Education that grounds the work." /><div className="grid gap-5 md:grid-cols-2">{portfolioData.education.map((edu, index) => <GlassPanel key={edu.degree} delay={index * 0.07} className={index % 2 ? "bg-[#f5e211]" : "bg-fresh"}><div className="flex items-start gap-5"><div className="rounded-[2rem] border-2 border-ink bg-white p-4 shadow-[4px_4px_0_#2c2e2a]"><GraduationCap size={30} /></div><div><h3 className="text-3xl font-black tracking-[-0.06em]">{edu.degree}</h3><p className="mt-3 text-xl font-semibold text-ink/78">{edu.institution}</p><p className="mt-6 inline-flex items-center gap-2 font-black"><Calendar size={18} />{edu.period}</p></div></div></GlassPanel>)}</div></section>
 
-      <section id="projects" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Featured Work" title="Projects as illustrated case cards." /><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{portfolioData.projects.map((project, index) => <ProjectCard key={project.title} {...project} delay={index * 0.06} />)}</div></section>
+      <section id="projects" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Featured Work" title="Engineering projects and practical systems work." /><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{portfolioData.projects.map((project, index) => <ProjectCard key={project.title} {...project} delay={index * 0.06} />)}</div></section>
 
       <section className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><div className="grid gap-5 md:grid-cols-3">{stats.map((stat, index) => <GlassPanel key={stat.label} delay={index * 0.06} className={index === 1 ? "bg-fresh" : "bg-white"}><p className="text-[clamp(5rem,12vw,10rem)] font-black leading-none tracking-[-0.1em]">{stat.value}</p><p className="mt-4 text-2xl font-black uppercase tracking-[-0.04em]">{stat.label}</p></GlassPanel>)}</div></section>
 

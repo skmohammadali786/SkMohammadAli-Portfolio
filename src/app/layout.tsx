@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.skmohammadali.in',
   },
-  title: "SK Mohammad Ali | Full-Stack Developer",
-  description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
+  title: "SK Mohammad Ali | Engineering Projects, Work & Systems",
+  description: "Explore SK Mohammad Ali’s engineering portfolio, full-stack work, IoT projects, SaaS project builds, and practical systems development from Kolkata.",
   keywords: [
     "SK Mohammad Ali",
     "SK Mohammad Ali portfolio",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     "engineering projects",
   ],
   openGraph: {
-    title: "SK Mohammad Ali | Full-Stack Developer",
-    description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
+    title: "SK Mohammad Ali | Engineering Projects, Work & Systems",
+    description: "Explore SK Mohammad Ali’s engineering portfolio, full-stack work, IoT projects, SaaS project builds, and practical systems development from Kolkata.",
     url: 'https://www.skmohammadali.in',
     siteName: 'SK MOHAMMAD ALI Portfolio',
     locale: 'en_US',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SK Mohammad Ali | Full-Stack Developer",
-    description: "Portfolio of SK Mohammad Ali, a Kolkata full-stack developer, electrical engineering student, IoT builder, and SaaS maker. View projects, skills, and contact details.",
+    title: "SK Mohammad Ali | Engineering Projects, Work & Systems",
+    description: "Explore SK Mohammad Ali’s engineering portfolio, full-stack work, IoT projects, SaaS project builds, and practical systems development from Kolkata.",
     creator: '@Skmohammadali_',
   },
   icons: {

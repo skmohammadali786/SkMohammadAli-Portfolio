@@ -1,5 +1,14 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss" source(none);
+
+@source "./**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/home/**/*.tsx";
+@source "../components/ui/Navbar.tsx";
+@source "../components/ui/GlassComponents.tsx";
+@source "../components/ui/Cards.tsx";
+@source "../components/ui/EmailDisplay.tsx";
+@source "../components/SmoothScroll.tsx";
+@source "../components/GoogleAnalytics.tsx";
+@source "../components/LazyComponents.tsx";
 
 @custom-variant dark (&:is(.dark *));
 

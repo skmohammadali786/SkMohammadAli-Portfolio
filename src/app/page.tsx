@@ -1,10 +1,7 @@
-import dynamic from "next/dynamic";
 import { portfolioData } from "@/lib/data/portfolio";
 import { ArrowRight, Download } from "lucide-react";
 
-const HomeDeferredSections = dynamic(() => import("@/components/home/HomeDeferredSections"), {
-  ssr: false,
-});
+import DeferredSectionsSlot from "@/components/home/DeferredSectionsSlot";
 
 function PeopleIllustration() {
   return (
@@ -64,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <HomeDeferredSections />
+      <DeferredSectionsSlot />
     </div>
   );
 }

@@ -47,7 +47,7 @@ export default function Home() {
         <div className="animate-hero-enter">
           <p className="mb-5 w-fit rounded-full border-2 border-ink bg-white px-5 py-2 text-sm font-black uppercase tracking-[0.12em] shadow-[4px_4px_0_#2c2e2a]">{portfolioData.title}</p>
           <h1 className="max-w-5xl text-[clamp(3.15rem,15vw,12.5rem)] sm:text-[clamp(5.5rem,13vw,13.5rem)] font-black leading-[0.84] tracking-[-0.09em] sm:leading-[0.78] sm:tracking-[-0.1em] text-ink">
-            SK Mohammad Ali Engineering Projects Portfolio
+            SK Mohammad Ali
           </h1>
           <h2 className="mt-5 max-w-4xl text-[clamp(1.35rem,4vw,3.25rem)] font-black leading-[0.95] tracking-[-0.06em] text-ink">Full-Stack Developer, Electrical Engineering Student, IoT Project Builder & Practical Systems Maker in Kolkata</h2>
           <p className="mt-6 max-w-3xl text-base font-semibold leading-7 text-ink/80 sm:mt-8 sm:text-2xl sm:leading-9">{portfolioData.about.split("\n")[0]}</p>

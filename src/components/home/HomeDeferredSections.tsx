@@ -56,7 +56,7 @@ const promiseCards = [
   },
   {
     title: "One brief. One maker.",
-    body: "From UI direction and component systems to backend logic, the portfolio shows a single owner who can carry work from concept to launch.",
+    body: "From UI direction and component systems to backend logic and embedded hardware, a single owner who carries work from concept to launch.",
     href: "#projects",
     label: "View projects",
   },
@@ -75,17 +75,22 @@ const promiseCards = [
 ];
 
 const stats = [
-  { value: `${portfolioData.projects.length}+`, label: "featured projects" },
-  { value: `${portfolioData.skills.length}+`, label: "technical skills" },
-  { value: "1", label: "focused creator" },
+  { value: `${portfolioData.projects.length}+`, label: "featured engineering project" },
+  { value: `${portfolioData.skills.length}+`, label: "technical capabilities" },
+  { value: "2028", label: "graduating B.Tech EE" },
 ];
 
 function MarqueeStrip() {
   const items = portfolioData.skills.map((skill) => skill.name);
   return (
-    <div className="overflow-hidden border-y-2 border-ink bg-fresh py-4 text-ink">
-      <div className="flex min-w-max animate-[scroll-left_28s_linear_infinite] gap-10 text-2xl font-black uppercase tracking-[-0.04em] sm:text-4xl">
-        {[...items, ...items].map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+    <div className="overflow-hidden border-y border-white/10 bg-slate-950/80 py-4 text-slate-100 backdrop-blur-md">
+      <div className="flex min-w-max animate-[scroll-left_28s_linear_infinite] gap-12 font-mono text-xs uppercase tracking-widest text-sky-400">
+        {[...items, ...items, ...items].map((item, index) => (
+          <span key={`${item}-${index}`} className="flex items-center gap-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-400/60" />
+            {item}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -96,25 +101,266 @@ export default function HomeDeferredSections() {
     <>
       <MarqueeStrip />
 
-      <section className="mx-auto grid max-w-[1500px] gap-5 px-4 py-20 sm:px-8 md:grid-cols-4">
-        {promiseCards.map((card, index) => <GlassPanel key={card.title} delay={index * 0.05} className={index === 0 ? "bg-fresh" : index === 1 ? "bg-white" : index === 2 ? "bg-[#f5e211]" : "bg-[#ff8b64]"}><a href={card.href} className="flex h-full min-h-80 flex-col justify-between"><div><p className="text-6xl font-black tracking-[-0.08em]">0{index + 1}</p><h3 className="mt-8 text-4xl font-black tracking-[-0.08em]">{card.title}</h3><p className="mt-5 text-lg font-semibold leading-8 text-ink/78">{card.body}</p></div><span className="mt-8 inline-flex items-center gap-2 text-lg font-black">{card.label} <ArrowRight size={20} /></span></a></GlassPanel>)}
+      {/* Core Focus Bento Grid */}
+      <section className="mx-auto grid max-w-[1500px] gap-5 px-4 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
+        {promiseCards.map((card, index) => (
+          <GlassPanel
+            key={card.title}
+            delay={index * 0.05}
+            className="group hover:border-sky-500/40"
+          >
+            <a href={card.href} className="flex h-full min-h-[260px] flex-col justify-between">
+              <div>
+                <p className="font-mono text-3xl font-extrabold text-sky-400/80 group-hover:text-sky-300">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-100">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm font-normal leading-relaxed text-slate-400">
+                  {card.body}
+                </p>
+              </div>
+              <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-400 transition group-hover:translate-x-1">
+                {card.label} <ArrowRight size={16} />
+              </span>
+            </a>
+          </GlassPanel>
+        ))}
       </section>
 
-      <section id="about" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="About" title="Engineering work with one clear human thread." /><GlassPanel className="bg-white text-xl font-semibold leading-10 sm:text-2xl whitespace-pre-wrap">{portfolioData.about}</GlassPanel></section>
+      {/* About Section */}
+      <section id="about" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="About"
+          title="Engineering work with one clear human thread."
+        />
+        <GlassPanel className="bg-slate-900/60 text-base font-normal leading-relaxed text-slate-300 sm:text-xl sm:leading-relaxed whitespace-pre-wrap border-white/10">
+          {portfolioData.about}
+        </GlassPanel>
+      </section>
 
-      <section id="skills" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Capability Map" title="Skills, drawn like a living network." /><div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">{portfolioData.skills.map((skill, index) => <SkillBadge key={skill.name} name={skill.name} icon={iconMap[skill.icon]} delay={index * 0.035} />)}</div></section>
+      {/* Capability Map Section */}
+      <section id="skills" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="Capability Map"
+          title="Skills, drawn like a living network."
+        />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {portfolioData.skills.map((skill, index) => (
+            <SkillBadge
+              key={skill.name}
+              name={skill.name}
+              icon={iconMap[skill.icon] || Cpu}
+              delay={index * 0.035}
+            />
+          ))}
+        </div>
+      </section>
 
-      <section id="experience" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Journey" title="Professional signals, simplified." /><div className="grid gap-5 lg:grid-cols-2">{portfolioData.experience.map((exp, index) => <GlassPanel key={exp.role} delay={index * 0.07} className="bg-white"><div className="flex h-full flex-col justify-between gap-10"><div><h3 className="text-4xl font-black tracking-[-0.07em]">{exp.role}</h3><p className="mt-2 text-xl font-black text-ink/70">{exp.company}</p><p className="mt-6 text-lg font-semibold leading-8 text-ink/78">{exp.description}</p></div><p className="inline-flex w-fit items-center gap-2 rounded-full border-2 border-ink bg-fresh px-4 py-2 font-black"><Calendar size={18} />{exp.period}</p></div></GlassPanel>)}</div></section>
+      {/* Experience Section */}
+      <section id="experience" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="Journey"
+          title="Professional signals, simplified."
+        />
+        <div className="grid gap-5 lg:grid-cols-3">
+          {portfolioData.experience.map((exp, index) => (
+            <GlassPanel key={exp.role} delay={index * 0.07}>
+              <div className="flex h-full flex-col justify-between gap-6">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-sky-500/30 bg-sky-500/10 px-2.5 py-1 text-[11px] font-mono text-sky-300">
+                    <Calendar size={13} />
+                    {exp.period}
+                  </span>
+                  <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-100">
+                    {exp.role}
+                  </h3>
+                  <p className="mt-1 font-semibold text-sky-400/90 text-sm">
+                    {exp.company}
+                  </p>
+                  <p className="mt-4 text-sm font-normal leading-relaxed text-slate-400">
+                    {exp.description}
+                  </p>
+                </div>
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
+      </section>
 
-      <section id="education" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Foundation" title="Education that grounds the work." /><div className="grid gap-5 md:grid-cols-2">{portfolioData.education.map((edu, index) => <GlassPanel key={edu.degree} delay={index * 0.07} className={index % 2 ? "bg-[#f5e211]" : "bg-fresh"}><div className="flex items-start gap-5"><div className="rounded-[2rem] border-2 border-ink bg-white p-4 shadow-[4px_4px_0_#2c2e2a]"><GraduationCap size={30} /></div><div><h3 className="text-3xl font-black tracking-[-0.06em]">{edu.degree}</h3><p className="mt-3 text-xl font-semibold text-ink/78">{edu.institution}</p><p className="mt-6 inline-flex items-center gap-2 font-black"><Calendar size={18} />{edu.period}</p></div></div></GlassPanel>)}</div></section>
+      {/* Education Section */}
+      <section id="education" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="Foundation"
+          title="Education that grounds the work."
+        />
+        <div className="grid gap-5 md:grid-cols-3">
+          {portfolioData.education.map((edu, index) => (
+            <GlassPanel key={edu.degree} delay={index * 0.07}>
+              <div className="flex items-start gap-4">
+                <div className="rounded-xl border border-sky-500/30 bg-sky-500/10 p-3 text-sky-400 shrink-0">
+                  <GraduationCap size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold tracking-tight text-slate-100">
+                    {edu.degree}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-slate-300">
+                    {edu.institution}
+                  </p>
+                  <p className="mt-3 font-mono text-xs text-sky-400">
+                    {edu.period}
+                  </p>
+                </div>
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
+      </section>
 
-      <section id="projects" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Featured Work" title="Engineering projects and practical systems work." /><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{portfolioData.projects.map((project, index) => <ProjectCard key={project.title} {...project} delay={index * 0.06} />)}</div></section>
+      {/* Featured Projects Section */}
+      <section id="projects" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="Featured Work"
+          title="Engineering projects and practical systems work."
+        />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {portfolioData.projects.map((project, index) => (
+            <ProjectCard key={project.title} {...project} delay={index * 0.06} />
+          ))}
+        </div>
+      </section>
 
-      <section className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><div className="grid gap-5 md:grid-cols-3">{stats.map((stat, index) => <GlassPanel key={stat.label} delay={index * 0.06} className={index === 1 ? "bg-fresh" : "bg-white"}><p className="text-[clamp(5rem,12vw,10rem)] font-black leading-none tracking-[-0.1em]">{stat.value}</p><p className="mt-4 text-2xl font-black uppercase tracking-[-0.04em]">{stat.label}</p></GlassPanel>)}</div></section>
+      {/* Stats Section */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-8">
+        <div className="grid gap-5 md:grid-cols-3">
+          {stats.map((stat, index) => (
+            <GlassPanel key={stat.label} delay={index * 0.06} className="text-center">
+              <p className="text-[clamp(3.5rem,8vw,6rem)] font-extrabold leading-none tracking-tight text-sky-400">
+                {stat.value}
+              </p>
+              <p className="mt-3 font-mono text-xs uppercase tracking-wider text-slate-400">
+                {stat.label}
+              </p>
+            </GlassPanel>
+          ))}
+        </div>
+      </section>
 
-      <section id="contact" className="mx-auto max-w-[1500px] px-4 py-24 sm:px-8"><SectionHeader eyebrow="Ready when you are" title="Let’s build something useful." /><div className="grid gap-6 md:grid-cols-2"><GlassPanel className="bg-fresh"><div className="flex flex-col gap-7"><div className="flex items-center gap-4"><div className="rounded-full border-2 border-ink bg-white p-4 shadow-[4px_4px_0_#2c2e2a]"><Mail size={26} /></div><div><p className="text-sm font-black uppercase tracking-[0.12em]">Email</p>{portfolioData.contact.emails.map((email) => <EmailDisplay key={email} email={email} className="block break-all text-base font-black sm:text-xl" />)}</div></div><div className="flex items-center gap-4"><div className="rounded-full border-2 border-ink bg-white p-4 shadow-[4px_4px_0_#2c2e2a]"><MapPin size={26} /></div><div><p className="text-sm font-black uppercase tracking-[0.12em]">Location</p><p className="text-xl font-black">{portfolioData.contact.location}</p></div></div><div className="flex flex-nowrap gap-2 pt-2 sm:gap-4">{[{ icon: Github, href: portfolioData.contact.github },{ icon: Linkedin, href: portfolioData.contact.linkedin },{ icon: Twitter, href: portfolioData.contact.twitter },{ icon: Telegram, href: portfolioData.contact.telegram },{ icon: Instagram, href: portfolioData.contact.instagram },{ icon: Facebook, href: portfolioData.contact.facebook }].map((social, i) => <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full border-2 border-ink bg-white p-2 shadow-[3px_3px_0_#2c2e2a] transition hover:-translate-y-1 sm:p-3"><social.icon size={22} /></a>)}</div></div></GlassPanel><GlassPanel className="bg-white"><form className="space-y-5" action="https://formspree.io/f/xaqgoblz" method="POST"><div className="grid gap-5 sm:grid-cols-2"><div><label className="mb-2 block text-sm font-black uppercase tracking-[0.12em]">Name</label><input type="text" name="name" className="w-full rounded-full border-2 border-ink bg-cream px-5 py-4 text-base font-bold text-ink outline-none" placeholder="Your Name" required /></div><div><label className="mb-2 block text-sm font-black uppercase tracking-[0.12em]">Email</label><input type="email" name="email" className="w-full rounded-full border-2 border-ink bg-cream px-5 py-4 text-base font-bold text-ink outline-none" placeholder="your@email.com" required /></div></div><div><label className="mb-2 block text-sm font-black uppercase tracking-[0.12em]">Message</label><textarea rows={5} name="message" className="w-full rounded-[2rem] border-2 border-ink bg-cream px-5 py-4 text-base font-bold text-ink outline-none" placeholder="Tell me about your project" required /></div><button className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-ink bg-fresh px-5 py-3 text-sm font-black sm:px-8 sm:py-4 sm:text-lg shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1"><Send size={20} /> Send Message</button></form></GlassPanel></div></section>
+      {/* Contact Section */}
+      <section id="contact" className="mx-auto max-w-[1500px] px-4 py-20 sm:px-8">
+        <SectionHeader
+          eyebrow="Ready when you are"
+          title="Let’s build something useful."
+        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <GlassPanel className="flex flex-col justify-between">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="rounded-2xl border border-sky-500/30 bg-sky-500/10 p-3 text-sky-400 shrink-0">
+                  <Mail size={22} />
+                </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-wider text-slate-400">Email</p>
+                  {portfolioData.contact.emails.map((email) => (
+                    <EmailDisplay key={email} email={email} className="block break-all text-sm font-semibold text-slate-200 sm:text-base hover:text-sky-300 transition" />
+                  ))}
+                </div>
+              </div>
 
-      <footer className="mx-auto flex max-w-[1500px] flex-col justify-between gap-6 border-t-2 border-ink px-4 py-12 text-lg font-black sm:flex-row sm:px-8"><p>© 2026 {portfolioData.name}. All rights reserved.</p><p>Real people. Real work. Real web systems.</p></footer>
+              <div className="flex items-center gap-4">
+                <div className="rounded-2xl border border-sky-500/30 bg-sky-500/10 p-3 text-sky-400 shrink-0">
+                  <MapPin size={22} />
+                </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-wider text-slate-400">Location</p>
+                  <p className="text-base font-semibold text-slate-200">{portfolioData.contact.location}</p>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-slate-400 mb-3">Connect</p>
+                <div className="flex flex-wrap gap-2.5">
+                  {[
+                    { icon: Github, href: portfolioData.contact.github, label: "GitHub" },
+                    { icon: Linkedin, href: portfolioData.contact.linkedin, label: "LinkedIn" },
+                    { icon: Twitter, href: portfolioData.contact.twitter, label: "Twitter" },
+                    { icon: Telegram, href: portfolioData.contact.telegram, label: "Telegram" },
+                    { icon: Instagram, href: portfolioData.contact.instagram, label: "Instagram" },
+                    { icon: Facebook, href: portfolioData.contact.facebook, label: "Facebook" },
+                  ].map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-3.5 py-2 text-xs font-semibold text-slate-300 transition hover:border-sky-400 hover:bg-sky-500/20 hover:text-sky-300"
+                      aria-label={social.label}
+                    >
+                      <social.icon size={16} />
+                      <span>{social.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </GlassPanel>
+
+          <GlassPanel>
+            <form className="space-y-4" action="https://formspree.io/f/xaqgoblz" method="POST">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm font-medium text-slate-100 placeholder-slate-500 outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm font-medium text-slate-100 placeholder-slate-500 outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400">Message</label>
+                <textarea
+                  rows={4}
+                  name="message"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm font-medium text-slate-100 placeholder-slate-500 outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60"
+                  placeholder="Tell me about your project"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-sky-400 shadow-lg shadow-sky-500/20"
+              >
+                <Send size={16} />
+                <span>Send Message</span>
+              </button>
+            </form>
+          </GlassPanel>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="mx-auto flex max-w-[1500px] flex-col justify-between gap-4 border-t border-white/10 px-4 py-10 text-xs font-mono text-slate-400 sm:flex-row sm:px-8">
+        <p>© 2026 {portfolioData.name}. All rights reserved.</p>
+        <p>Real people. Real work. Real web & hardware systems.</p>
+      </footer>
     </>
   );
 }

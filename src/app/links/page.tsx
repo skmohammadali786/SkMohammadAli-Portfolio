@@ -67,11 +67,14 @@ export default function LinksPage() {
   };
 
   return (
-    <div className="relative overflow-hidden px-4 pb-24 pt-32 text-ink sm:px-8">
+    <div className="relative overflow-hidden px-4 pb-24 pt-32 text-slate-100 sm:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[1500px]">
-        <a href="/" className="mb-10 inline-flex items-center gap-2 rounded-full border-2 border-ink bg-white px-5 py-3 text-sm font-black shadow-[4px_4px_0_#2c2e2a] transition hover:-translate-y-1">
-          <ArrowLeft size={18} /> Back to portfolio
+        <a
+          href="/"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-5 py-2.5 text-xs font-semibold text-slate-200 transition hover:border-sky-400 hover:bg-slate-800"
+        >
+          <ArrowLeft size={16} /> Back to portfolio
         </a>
 
         <SectionHeader
@@ -81,25 +84,30 @@ export default function LinksPage() {
         />
 
         <section className="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
-          <GlassPanel className="bg-fresh">
+          <GlassPanel>
             <div className="flex items-start gap-4">
-              <div className="rounded-full border-2 border-ink bg-white p-3 shadow-[3px_3px_0_#2c2e2a]">
+              <div className="rounded-2xl border border-sky-500/30 bg-sky-500/10 p-3 text-sky-400 shrink-0">
                 <LinkIcon size={24} />
               </div>
               <div>
-                <h1 className="text-4xl font-black tracking-[-0.07em] sm:text-6xl">Official citation</h1>
-                <p className="mt-5 text-lg font-semibold leading-8 text-ink/78">
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-100">
+                  Official citation
+                </h1>
+                <p className="mt-4 text-sm font-normal leading-relaxed text-slate-300 sm:text-base">
                   SK Mohammad Ali is an Electrical Engineering student at Aliah University, a full-stack developer, and an IoT builder based in Kolkata, India. His portfolio highlights engineering projects, SaaS and web development skills, and practical systems work.
                 </p>
               </div>
             </div>
           </GlassPanel>
 
-          <GlassPanel className="bg-white">
-            <h2 className="text-3xl font-black tracking-[-0.06em]">Suggested anchor text</h2>
-            <div className="mt-6 flex flex-wrap gap-3">
+          <GlassPanel>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-100">Suggested anchor text</h2>
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {anchorSuggestions.map((anchor) => (
-                <span key={anchor} className="rounded-full border-2 border-ink bg-cream px-4 py-2 text-sm font-black shadow-[3px_3px_0_#2c2e2a]">
+                <span
+                  key={anchor}
+                  className="rounded-full border border-white/10 bg-slate-950 px-3.5 py-1.5 font-mono text-xs text-sky-300"
+                >
                   {anchor}
                 </span>
               ))}
@@ -111,14 +119,23 @@ export default function LinksPage() {
           <SectionHeader eyebrow="Official Links" title="Use these URLs when referencing the work." />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {officialLinks.map((link, index) => (
-              <GlassPanel key={link.href} delay={index * 0.04} className={index % 2 ? "bg-white" : "bg-[#f5e211]"}>
-                <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="group flex h-full flex-col justify-between gap-8">
+              <GlassPanel key={link.href} delay={index * 0.04}>
+                <a
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="group flex h-full flex-col justify-between gap-6"
+                >
                   <div>
-                    <h2 className="text-3xl font-black tracking-[-0.06em]">{link.label}</h2>
-                    <p className="mt-4 text-base font-semibold leading-7 text-ink/75">{link.note}</p>
+                    <h2 className="text-xl font-bold tracking-tight text-slate-100 group-hover:text-sky-300 transition-colors">
+                      {link.label}
+                    </h2>
+                    <p className="mt-2 text-xs font-normal leading-relaxed text-slate-400 sm:text-sm">
+                      {link.note}
+                    </p>
                   </div>
-                  <span className="inline-flex items-center gap-2 break-all text-sm font-black text-ink transition group-hover:text-[#5ba634]">
-                    {link.href} <ExternalLink size={18} />
+                  <span className="inline-flex items-center gap-1.5 break-all font-mono text-xs text-sky-400 transition group-hover:text-sky-300">
+                    {link.href} <ExternalLink size={14} />
                   </span>
                 </a>
               </GlassPanel>
@@ -127,28 +144,34 @@ export default function LinksPage() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-2">
-          <GlassPanel className="bg-white">
-            <div className="mb-6 flex items-center gap-3">
-              <Share2 size={26} />
-              <h2 className="text-4xl font-black tracking-[-0.07em]">Relevant backlink opportunities</h2>
+          <GlassPanel>
+            <div className="mb-4 flex items-center gap-3">
+              <Share2 size={22} className="text-sky-400" />
+              <h2 className="text-2xl font-bold tracking-tight text-slate-100">Relevant backlink opportunities</h2>
             </div>
-            <ul className="space-y-4 text-lg font-semibold leading-8 text-ink/78">
+            <ul className="space-y-3 text-sm font-normal text-slate-300">
               {backlinkTargets.map((target) => (
-                <li key={target} className="rounded-[1.5rem] border-2 border-ink bg-cream px-5 py-4 shadow-[3px_3px_0_#2c2e2a]">{target}</li>
+                <li key={target} className="rounded-xl border border-white/10 bg-slate-950 p-3.5 font-sans">
+                  {target}
+                </li>
               ))}
             </ul>
           </GlassPanel>
 
-          <GlassPanel className="bg-fresh">
-            <div className="mb-6 flex items-center gap-3">
-              <Mail size={26} />
-              <h2 className="text-4xl font-black tracking-[-0.07em]">Collaboration note</h2>
+          <GlassPanel>
+            <div className="mb-4 flex items-center gap-3">
+              <Mail size={22} className="text-sky-400" />
+              <h2 className="text-2xl font-bold tracking-tight text-slate-100">Collaboration note</h2>
             </div>
-            <p className="text-lg font-semibold leading-8 text-ink/78">
+            <p className="text-sm font-normal leading-relaxed text-slate-300">
               If you are publishing an engineering showcase, student project directory, campus event page, developer roundup, or accessibility technology article, link to the homepage as the canonical source and mention the Voice Control Wheel Chair project when the context is about IoT or assistive mobility.
             </p>
-            <a href={`mailto:${portfolioData.contact.emails[0]}?subject=Portfolio%20citation%20or%20collaboration`} className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-white px-6 py-3 text-base font-black shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1">
-              Contact for citation details <ExternalLink size={18} />
+            <a
+              href={`mailto:${portfolioData.contact.emails[0]}?subject=Portfolio%20citation%20or%20collaboration`}
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-xs font-bold text-slate-950 transition hover:bg-sky-400"
+            >
+              <span>Contact for citation details</span>
+              <ExternalLink size={14} />
             </a>
           </GlassPanel>
         </section>

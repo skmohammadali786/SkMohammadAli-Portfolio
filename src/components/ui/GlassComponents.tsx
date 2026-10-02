@@ -10,12 +10,12 @@ export function GlassPanel({ children, className, delay = 0 }: GlassPanelProps) 
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[3rem] border-2 border-ink bg-white p-6 text-ink shadow-[7px_7px_0_#2c2e2a] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_0_#2c2e2a] sm:p-8",
+        "relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-6 text-slate-100 backdrop-blur-xl shadow-xl shadow-slate-950/40 transition duration-300 hover:border-sky-500/30 hover:shadow-2xl hover:shadow-sky-950/20 sm:p-8",
         className
       )}
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className="pointer-events-none absolute right-6 top-6 h-10 w-10 rounded-full border-2 border-ink/15" />
+      <div className="pointer-events-none absolute right-6 top-6 h-12 w-12 rounded-full border border-white/5 bg-white/[0.02]" />
       <div className="relative z-10">{children}</div>
     </div>
   );
@@ -25,15 +25,16 @@ export function SectionHeader({ title, subtitle, eyebrow }: { title: string; sub
   return (
     <div className="mb-12 max-w-5xl">
       {eyebrow && (
-        <p className="mb-4 w-fit rounded-full border-2 border-ink bg-white px-4 py-2 text-sm font-black uppercase tracking-[0.12em] shadow-[3px_3px_0_#2c2e2a]">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-sky-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
           {eyebrow}
         </p>
       )}
-      <h2 className="text-[clamp(2.7rem,12vw,9.5rem)] font-black leading-[0.82] tracking-[-0.1em] text-ink">
+      <h2 className="text-[clamp(2.4rem,7vw,5.5rem)] font-extrabold leading-[0.92] tracking-tight text-slate-100">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-5 max-w-4xl text-base font-semibold leading-7 text-ink/75 sm:mt-7 sm:text-2xl sm:leading-9">
+        <p className="mt-5 max-w-3xl text-base font-normal leading-relaxed text-slate-400 sm:mt-6 sm:text-xl sm:leading-relaxed">
           {subtitle}
         </p>
       )}

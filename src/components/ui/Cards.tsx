@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { GlassPanel } from "./GlassComponents";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -11,41 +11,88 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, description, tags, link, delay = 0 }: ProjectCardProps) {
-  const palette = ["#8ed462", "#f5e211", "#75b7ff", "#ff8b64"];
-  const accent = palette[title.length % palette.length];
-
   return (
-    <GlassPanel delay={delay} className="group bg-white">
-      <div className="relative mb-7 aspect-[1.05/1] overflow-hidden rounded-[2.5rem] border-2 border-ink bg-cream">
-        <svg viewBox="0 0 420 400" className="absolute inset-0 h-full w-full" aria-hidden="true">
-          <rect width="420" height="400" fill="#f5f1e4" />
-          <path d="M34 288 C94 190 158 318 218 176 S330 178 388 76" fill="none" stroke="#2c2e2a" strokeWidth="10" strokeLinecap="round" />
-          <path d="M34 288 C94 190 158 318 218 176 S330 178 388 76" fill="none" stroke={accent} strokeWidth="5" strokeLinecap="round" />
-          <circle cx="94" cy="190" r="46" fill={accent} stroke="#2c2e2a" strokeWidth="6" />
-          <circle cx="218" cy="176" r="56" fill="#ffffff" stroke="#2c2e2a" strokeWidth="6" />
-          <circle cx="330" cy="178" r="42" fill="#f5e211" stroke="#2c2e2a" strokeWidth="6" />
-          <rect x="42" y="38" width="192" height="34" rx="17" fill="#ffffff" stroke="#2c2e2a" strokeWidth="5" />
-          <rect x="42" y="92" width="112" height="18" rx="9" fill="#2c2e2a" opacity=".18" />
-          <rect x="42" y="122" width="172" height="18" rx="9" fill="#2c2e2a" opacity=".12" />
-          <path d="M256 283 Q292 236 330 283 T404 283" fill="none" stroke="#2c2e2a" strokeWidth="6" strokeLinecap="round" />
-        </svg>
-        <a href={link} className="absolute bottom-5 right-5 rounded-full border-2 border-ink bg-white p-4 text-ink shadow-[4px_4px_0_#2c2e2a] transition group-hover:-translate-y-1" aria-label={`View ${title}`}><ExternalLink size={20} /></a>
+    <GlassPanel delay={delay} className="group bg-slate-900/70 border border-white/10 hover:border-sky-500/40 transition-all">
+      <div className="relative mb-6 aspect-[1.4/1] overflow-hidden rounded-2xl border border-white/10 bg-slate-950 p-6 flex flex-col justify-between">
+        {/* Subtle grid pattern background */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: "radial-gradient(rgba(56, 189, 248, 0.4) 1px, transparent 1px)",
+            backgroundSize: "20px 20px"
+          }}
+        />
+
+        {/* Top Header inside image card */}
+        <div className="relative z-10 flex items-center justify-between">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-sky-500/30 bg-sky-500/10 px-2.5 py-1 text-[11px] font-mono font-semibold text-sky-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            ENGINEERING WORK
+          </span>
+          <a
+            href={link}
+            className="rounded-full border border-white/10 bg-slate-900/80 p-2.5 text-slate-300 transition hover:border-sky-400 hover:bg-sky-500 hover:text-slate-950"
+            aria-label={`View ${title}`}
+            target={link.startsWith("http") ? "_blank" : undefined}
+            rel="noopener noreferrer"
+          >
+            <ArrowUpRight size={18} />
+          </a>
+        </div>
+
+        {/* Dynamic Graphic representation */}
+        <div className="relative z-10 my-auto flex items-center justify-center py-4">
+          <div className="relative flex h-24 w-full items-center justify-center rounded-xl border border-slate-800 bg-slate-900/80 px-4">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
+            <svg viewBox="0 0 320 80" className="h-16 w-full text-sky-400/80" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M10 40 Q 80 10, 160 40 T 310 40" strokeDasharray="4 4" />
+              <circle cx="80" cy="25" r="5" fill="#38bdf8" />
+              <circle cx="160" cy="40" r="7" fill="#a78bfa" />
+              <circle cx="240" cy="55" r="5" fill="#34d399" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Tags row in card header */}
+        <div className="relative z-10 flex flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <span key={tag} className="rounded-md border border-white/10 bg-slate-900/90 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-slate-300">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
-      <h3 className="mb-4 text-3xl font-black sm:text-4xl leading-none tracking-[-0.08em]">{title}</h3>
-      <p className="mb-6 text-base font-semibold leading-7 sm:text-lg sm:leading-8 text-ink/76">{description}</p>
-      <div className="flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-full border-2 border-ink bg-cream px-3 py-1 text-xs font-black uppercase tracking-[0.08em]">{tag}</span>)}</div>
+
+      <h3 className="mb-3 text-2xl font-bold tracking-tight text-slate-100 group-hover:text-sky-300 transition-colors sm:text-3xl">
+        {title}
+      </h3>
+      <p className="mb-6 text-sm font-normal leading-relaxed text-slate-400 sm:text-base sm:leading-relaxed">
+        {description}
+      </p>
+
+      <a
+        href={link}
+        className="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 hover:text-sky-300 transition"
+      >
+        <span>Explore details</span>
+        <ExternalLink size={15} />
+      </a>
     </GlassPanel>
   );
 }
 
 export function SkillBadge({ name, icon: Icon, delay = 0 }: { name: string; icon: ComponentType<{ className?: string; size?: number | string }>; delay?: number }) {
   return (
-    <div className="group rounded-[2.25rem] border-2 border-ink bg-white p-5 text-center shadow-[5px_5px_0_#2c2e2a] transition hover:-translate-y-1 hover:bg-fresh" style={{ animationDelay: `${delay}s` }}>
-      <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border-2 border-ink bg-cream">
-        <svg viewBox="0 0 80 80" className="absolute inset-0 h-full w-full" aria-hidden="true"><path d="M13 44 C25 17 45 63 67 25" fill="none" stroke="#8ed462" strokeWidth="6" strokeLinecap="round"/><circle cx="40" cy="40" r="30" fill="none" stroke="#2c2e2a" strokeOpacity=".2" strokeWidth="2"/></svg>
-        <Icon className="relative z-10 text-ink" size={32} />
+    <div
+      className="group relative flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-center shadow-lg transition-all duration-300 hover:border-sky-500/40 hover:bg-slate-900/90 hover:-translate-y-1"
+      style={{ animationDelay: `${delay}s` }}
+    >
+      <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-slate-950 text-sky-400 transition-transform duration-300 group-hover:scale-110 group-hover:border-sky-500/50 group-hover:bg-sky-500/10">
+        <Icon size={26} />
       </div>
-      <span className="text-sm font-black uppercase tracking-[-0.02em]">{name}</span>
+      <span className="text-xs font-semibold text-slate-200 group-hover:text-white">
+        {name}
+      </span>
     </div>
   );
 }

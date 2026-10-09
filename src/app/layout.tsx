@@ -4,6 +4,7 @@ import Navbar from "@/components/ui/Navbar";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { DynamicErrorReporter, DynamicVisualEditsMessenger } from "@/components/LazyComponents";
 import SmoothScroll from "@/components/SmoothScroll";
+import Mascot from "@/components/Mascot";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.skmohammadali.in'),
@@ -92,6 +93,7 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
+          <Mascot />
         </SmoothScroll>
         {process.env.NODE_ENV === "development" && <DynamicVisualEditsMessenger />}
       </body>
